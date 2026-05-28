@@ -193,6 +193,7 @@ button {
     width 0.15s,
     height 0.15s,
     opacity 0.15s;
+  animation: pulse 2s infinite;
 }
 
 #tracker::after {
@@ -211,4 +212,18 @@ button {
   transform: translate(-50%, -50%);
 
   border-radius: 50%;
+}
+@keyframes pulse {
+
+  0% {
+    box-shadow: 0 0 8px rgba(255,0,0,0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 8px rgba(255,0,0,0.2);
+  }
 }
