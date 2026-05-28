@@ -236,11 +236,9 @@ canvas.addEventListener('click', (e) => {
   destroyImage();
   showNextText();
 
-  if (destructionLevel >= MAX_DESTRUCTION) {
-    setTimeout(() => {
-      finalModal.classList.remove('hidden');
-    }, 800);
-  }
+ if (destructionLevel > MAX_DESTRUCTION) {
+  finalModal.classList.remove('hidden');
+}
 });
 
 //restart button
@@ -296,4 +294,20 @@ document.addEventListener('click', (e) => {
   } else {
     tooltip.classList.remove('visible');
   }
+});
+const tracker = document.getElementById('tracker');
+
+document.addEventListener('mousemove', (e) => {
+  tracker.style.left = `${e.clientX}px`;
+  tracker.style.top = `${e.clientY}px`;
+});
+
+document.addEventListener('mousedown', () => {
+  tracker.style.width = '48px';
+  tracker.style.height = '48px';
+});
+
+document.addEventListener('mouseup', () => {
+  tracker.style.width = '28px';
+  tracker.style.height = '28px';
 });
