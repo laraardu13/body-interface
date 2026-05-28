@@ -200,10 +200,10 @@ function scanlines() {
 function showNextText() {
   if (destructionLevel > messages.length) return;
  
+const card = document.createElement('div');
+card.className = 'message-card';
 
-  const card = document.createElement('div');
-  card.className = 'message-card';
-  card.style.position = 'fixed';
+card.style.position = 'fixed';
 
 card.style.left = `${10 + Math.random() * 70}%`;
 
@@ -213,6 +213,9 @@ card.style.transform = `
   translate(-50%, -50%)
   rotate(${(Math.random() - 0.5) * 8}deg)
 `;
+
+card.style.backdropFilter = 'blur(4px)';
+  
   card.innerHTML = `
     <span class="close-btn">✕</span>
     <p>${processMessage(messages[destructionLevel - 1])}</p>
