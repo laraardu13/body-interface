@@ -17,6 +17,30 @@ const messages = [
   "NO FURTHER INPUT REQUIRED",
   "I DON'T RECOGNIZE THIS BODY"
 ];
+const conceptData = {
+  SUBJECT: "The human body transformed into machine-readable data through surveillance and algorithmic classification.",
+  ENGAGEMENT: "User behavior tracked, quantified, and optimized within platform economies.",
+  IDENTITY: "Personal identity simplified into metadata, behavioral patterns, and predictive categories.",
+  MEMORY: "Human experience compressed into digital archives and platform memory systems.",
+  IMAGE: "The visual self detached from physical reality and circulated as data.",
+  BODY: "The body treated as an interface for extraction, surveillance, and behavioral analysis.",
+  INDEXED: "The process of storing and categorizing identity within computational systems.",
+  PATTERN: "Behavior interpreted through algorithmic prediction and automated recognition.",
+  INPUT: "Human interaction reduced to measurable system activity."
+};
+
+function processMessage(message) {
+  Object.keys(conceptData).forEach(word => {
+    const regex = new RegExp(`\\b${word}\\b`, 'g');
+
+    message = message.replace(
+      regex,
+      `<span class="concept" data-info="${conceptData[word]}">${word}</span>`
+    );
+  });
+
+  return message;
+}
 
 //pic load
 
@@ -182,7 +206,7 @@ function showNextText() {
   card.className = 'message-card';
   card.innerHTML = `
     <span class="close-btn">✕</span>
-    <p>${messages[destructionLevel - 1]}</p>
+    <p>${processMessage(messages[destructionLevel - 1])}</p>
   `;
 
   textsContainer.appendChild(card);
