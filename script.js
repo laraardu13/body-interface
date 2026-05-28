@@ -269,6 +269,7 @@ window.addEventListener('mousemove', (e) => {
   lastX = e.clientX;
   lastY = e.clientY;
 });
+
 const tooltip = document.getElementById('tooltip');
 
 document.addEventListener('click', (e) => {
@@ -276,11 +277,14 @@ document.addEventListener('click', (e) => {
     e.stopPropagation();
 
     tooltip.innerText = e.target.dataset.info;
-    tooltip.style.left = `${e.pageX + 15}px`;
-    tooltip.style.top = `${e.pageY + 15}px`;
+
+    tooltip.style.left = `${e.clientX + 15}px`;
+    tooltip.style.top = `${e.clientY + 15}px`;
 
     tooltip.classList.add('visible');
+
+    console.log('tooltip opened:', e.target.dataset.info);
   } else {
     tooltip.classList.remove('visible');
   }
-}); 
+});
