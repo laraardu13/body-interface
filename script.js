@@ -269,3 +269,18 @@ window.addEventListener('mousemove', (e) => {
   lastX = e.clientX;
   lastY = e.clientY;
 });
+const tooltip = document.getElementById('tooltip');
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('concept')) {
+    e.stopPropagation();
+
+    tooltip.innerText = e.target.dataset.info;
+    tooltip.style.left = `${e.pageX + 15}px`;
+    tooltip.style.top = `${e.pageY + 15}px`;
+
+    tooltip.classList.add('visible');
+  } else {
+    tooltip.classList.remove('visible');
+  }
+}); 
