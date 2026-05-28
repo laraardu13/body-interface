@@ -139,10 +139,9 @@ button {
 }
 
 #tooltip {
-  position: absolute;
+  position: fixed;
 
   background: black;
-
   color: red;
 
   border: 1px solid red;
@@ -152,18 +151,25 @@ button {
   max-width: 260px;
 
   font-family: monospace;
-
   font-size: 12px;
-
   line-height: 1.4;
 
   opacity: 0;
 
-  z-index: 9999;
+  z-index: 99999;
 
   pointer-events: none;
+
+  transition: opacity 0.2s;
 }
 
 #tooltip.visible {
   opacity: 1;
+}
+
+.concept {
+  color: #ff4d4d;
+  cursor: pointer;
+  border-bottom: 1px dotted red;
+  pointer-events: all;
 }
