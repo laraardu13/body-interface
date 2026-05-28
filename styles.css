@@ -20,14 +20,13 @@ header {
   right: 0;
   text-align: center;
   padding: 20px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 100;
 }
 
 h1 {
   font-size: 2.5rem;
 }
-
 
 .image-container {
   width: 100vw;
@@ -57,81 +56,136 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100vw;
   height: 100vh;
+
   z-index: 50;
+
   pointer-events: none;
 }
 
 .message-card {
   position: fixed;
+
   background: rgba(0, 0, 0, 0.75);
-  border: 1px solid rgba(255,255,255,0.2);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
   padding: 20px 50px 20px 25px;
+
   opacity: 0;
+
   transition: opacity 0.4s;
+
   max-width: 500px;
+
   pointer-events: all;
+
   font-family: monospace;
-letter-spacing: 1px;
+
+  letter-spacing: 1px;
+
+  backdrop-filter: blur(4px);
+
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.08);
 }
 
 .message-card p {
   font-size: 1.6rem;
-  text-shadow: 0 0 20px rgba(0,0,0,0.9);
+
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
 .close-btn {
   position: absolute;
+
   top: 10px;
   right: 15px;
+
   cursor: pointer;
+
   font-size: 1.2rem;
+
   opacity: 0.6;
+
   pointer-events: all;
 }
 
 .close-btn:hover {
   opacity: 1;
 }
+
 .modal {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.95);
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.95);
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   z-index: 200;
 }
 
 .modal-content {
   text-align: center;
+
   max-width: 600px;
+
   padding: 40px;
 }
 
 .modal-content h2 {
   font-size: 3rem;
+
   margin-bottom: 20px;
+}
+
+.system-line {
+  margin-top: 20px;
+
+  color: rgba(255, 0, 0, 0.7);
+
+  font-family: monospace;
+
+  letter-spacing: 2px;
+
+  font-size: 0.8rem;
 }
 
 button {
   margin-top: 30px;
+
   padding: 15px 40px;
+
   font-size: 1.3rem;
+
   background: #fff;
   color: #000;
+
   border: none;
+
   cursor: pointer;
 }
 
 .hidden {
   display: none;
 }
+
 .concept {
   color: #ff4d4d;
+
   cursor: pointer;
+
   border-bottom: 1px dotted red;
+
   pointer-events: all;
 }
 
@@ -148,7 +202,9 @@ button {
   max-width: 260px;
 
   font-family: monospace;
+
   font-size: 12px;
+
   line-height: 1.4;
 
   opacity: 0;
@@ -171,6 +227,7 @@ button {
   height: 28px;
 
   border: 1px solid rgba(255, 0, 0, 0.65);
+
   border-radius: 50%;
 
   pointer-events: none;
@@ -189,29 +246,71 @@ button {
   animation: pulse 2s infinite;
 }
 
-.system-line {
-  margin-top: 20px;
+#tracker::after {
+  content: "";
 
-  color: rgba(255,0,0,0.7);
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  background: red;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+}
+
+.system-popup {
+  position: fixed;
+
+  color: rgba(255, 0, 0, 0.75);
 
   font-family: monospace;
 
+  font-size: 0.75rem;
+
   letter-spacing: 2px;
 
-  font-size: 0.8rem;
+  pointer-events: none;
+
+  z-index: 300;
+
+  animation: fadeSystem 2s forwards;
 }
 
 @keyframes pulse {
-
   0% {
-    box-shadow: 0 0 8px rgba(255,0,0,0.2);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
   }
 
   50% {
-    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
   }
 
   100% {
-    box-shadow: 0 0 8px rgba(255,0,0,0.2);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
   }
 }
+
+@keyframes fadeSystem {
+  0% {
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translateY(-10px);
+  }
+}
+  
