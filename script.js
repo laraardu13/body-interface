@@ -12,6 +12,8 @@ const messages = [
   "ENGAGEMENT PATTERN IDENTIFIED",
   "IDENTITY SIMPLIFIED",
   "MEMORY COMPRESSION COMPLETE",
+  "OPERATIONAL IMAGE GENERATED",
+  "PREDICTIVE PROFILE UPDATED",
   "ORIGINAL IMAGE LOST",
   "SUBJECT FULLY INDEXED",
   "NO FURTHER INPUT REQUIRED",
@@ -19,7 +21,7 @@ const messages = [
 ];
 const conceptData = {
   SUBJECT: "The human body transformed into machine-readable data through surveillance and algorithmic classification.",
-  ENGAGEMENT: "User behavior tracked, quantified, and optimized within platform economies.",
+  ENGAGEMENT:"User behavior tracked, quantified, and monetized within systems of platform capitalism.",
   IDENTITY: "Personal identity simplified into metadata, behavioral patterns, and predictive categories.",
   MEMORY: "Human experience compressed into digital archives and platform memory systems.",
   IMAGE: "The visual self detached from physical reality and circulated as data.",
