@@ -232,13 +232,15 @@ function showNextText() {
 //buttons clicks etc
 
 canvas.addEventListener('click', (e) => {
-  if (e.button !== 0) return;   
+  if (e.button !== 0) return;
+
+  if (destructionLevel >= MAX_DESTRUCTION) {
+    finalModal.classList.remove('hidden');
+    return;
+  }
+
   destroyImage();
   showNextText();
-
- if (destructionLevel > MAX_DESTRUCTION) {
-  finalModal.classList.remove('hidden');
-}
 });
 
 //restart button
