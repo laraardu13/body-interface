@@ -199,8 +199,7 @@ function scanlines() {
 
 function showNextText() {
   if (destructionLevel > messages.length) return;
-  const existing = document.querySelector('.message-card');
-  if (existing) existing.remove();
+ 
 
   const card = document.createElement('div');
   card.className = 'message-card';
